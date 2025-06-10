@@ -57,9 +57,27 @@ int main() {
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
     // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    
+    void moverBispoRecursivo(int passos) {
+        if (passos <= 0) return;
+        printf("Diagonal Cima-Direita\n");
+        moverBispoRecursivo(passos - 1);
 
+        printf("\nMovimento do Bispo:\n");
+        moverBispoRecursivo(5);
+    
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
+    void moverCavaloAvancado() {
+        printf("\nMovimentos possíveis do Cavalo:\n");
+        int dx[] = {2, 2, -2, -2, 1, 1, -1, -1};
+        int dy[] = {1, -1, 1, -1, 2, -2, 2, -2};
 
+        for (int i = 0; i < 8; i++) {
+            if (dx[i] == 0 || dy[i] == 0) continue; // pular movimentos inválidos
+            if (i == 5) break; // Interrupção do loop após 6 movimentos
+            printf("Cavalo move %d horizontal e %d vertical\n", dx[i], dy[i]);
+    }
+}
     return 0;
 }
